@@ -1,0 +1,67 @@
+.head {
+    background-color: white;
+    padding: 2.5rem;
+    display: flex;
+    vertical-align: center;
+    justify-content: space-between;
+}
+
+.head__left {
+    display: flex;
+    align-items: center;
+}
+
+.head__title {
+    margin-left: 5rem;
+}
+
+
+.wbIconButton {
+    font-size: 2rem;
+    background-color: white;
+    border-radius: var(--br-1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+}
+
+.wbIconButton--small {
+    padding: 1.5rem;
+}
+
+
+.head__profile {
+    background-size: 120%;
+    background-position: center center;
+    background-image: url(/static/profile--mini.jpg);
+}
+
+#root .head__title a {
+    color: var(--primary-color-dark);
+}
+
+.head__menu {
+    color: var(--primary-color-light);
+}
+
+body {
+    font-size: 14pt;
+    font-weight: 300;
+    line-height: 24pt;
+    color: #323240;
+    line-height: 24pt;
+    font-family: proxima-nova, "Proxima Nova", sans-serif;
+}
+
+h1,
+h2,
+h3,
+    {
+    color: var(--primary-color-dark)
+}
+
+code {
+    font-size: 14px;
+}

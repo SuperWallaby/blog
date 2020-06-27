@@ -1,0 +1,24 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'articles_detail.css'%}" />
+    <link rel="stylesheet" href="{% static 'tinymce/css/prism.css'%}" />
+    {{ form.media }}
+</head>
+
+<div class="article-detail">
+    <div class="article-detail__wrap" class="article">
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.date }}</p>
+        <div>
+            {% autoescape off %}
+            {{ article.description}}
+            {% endautoescape %}
+        </div>
+    </div>
+    <script src="{% static 'tinymce/js/prism.js'%}"> </script>
+</div>
+{% endblock %}
