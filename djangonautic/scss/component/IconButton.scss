@@ -1,0 +1,15 @@
+.wbIconButton {
+    font-size: 2rem;
+    background-color: white;
+    border-radius: $br1;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+}
+
+
+.wbIconButton--small {
+    padding: 1.5rem;
+}

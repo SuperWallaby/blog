@@ -1,9 +1,13 @@
+@import "../system/system.scss";
+
+
 .wbButton {
     background-color: var(--primary-color);
-    border-radius: var(--br-1);
+    border-radius: $br1;
     color: white;
     border: none;
     padding: 1rem;
     width: 100%;
     box-sizing: border-box;
+    outline: none;
 }

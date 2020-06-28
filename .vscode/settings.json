@@ -9,5 +9,9 @@
     "html": [
       "htm", "html", "django-html"
     ]
-  }
+  },
+  "search.exclude": {
+    "**/css": true
+  },
+  "search.searchEditor.reusePriorSearchConfiguration": true
 }

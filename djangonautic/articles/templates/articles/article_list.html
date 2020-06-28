@@ -4,11 +4,11 @@
 {%block content %}
 
 <head>
-    <link rel="stylesheet" href="{% static 'articles.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/articles.css'%}" />
 </head>
 <div class="articles">
     {% for article in articles %}
-    <div class="articles__article">
+    <div class="column articles__article">
         <div class="articles__up">
             <h2 class="articles__title">{{article.title}}</h2>
             <span class="articles__date">{{article.date}}</span>
@@ -20,5 +20,4 @@
     </div>
     {% endfor %}
 </div>
-
 {% endblock %}

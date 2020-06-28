@@ -1,0 +1,26 @@
+/* main #6E0FF7; */
+/* #E4E1F6; */
+/* 1E225E */
+/* F2F1F4 */
+html {
+    color: #1F1F1F;
+    font-family: 'Open Sans', sans-serif;
+    --primary-color: #6E0FF7;
+    --primary-color-dark: #1E225E;
+    --primary-color-pale: #E4E1F6;
+    --primary-color-light: #BDA5FC;
+    --grey-level2: #ACACAC;
+    --grey-level0: #FBFBFD;
+}
+
+
+$br1: 1rem;
+$br2: 1rem;
+
+$mobile: "400px" !default; // sm
+$phablet: "550px" !default; //  md
+$tablet: "750px" !default; //  wmd
+$desktop: "1000px" !default; // lg
+$desktophd: "1200px" !default; //  wlg
+$full: "9999px" !default;
+$null: "0px" !default;

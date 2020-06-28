@@ -1,0 +1,38 @@
+#root .head__title a {
+  color: var(--primary-color-dark);
+}
+
+.head {
+  background-color: white;
+  padding: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.head__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.head__title {
+  margin-left: 5rem;
+}
+
+.head__profile {
+  background-size: 120%;
+  background-position: center center;
+  background-image: url(/static/profile--mini.jpg);
+}
+
+.head__menu {
+  color: var(--primary-color-light);
+}

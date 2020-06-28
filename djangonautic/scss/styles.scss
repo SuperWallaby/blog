@@ -1,0 +1,38 @@
+@import "./system/system.scss";
+@import "./component/button.scss";
+@import "./component/head.scss";
+@import "./component/IconButton.scss";
+
+.head {
+    background-color: var(--primary-color-pale);
+}
+
+body {
+    background-repeat-y: no-repeat;
+    margin: 0px;
+    display: grid;
+}
+
+svg.wbIcon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+h1,
+h2,
+h3 {
+
+    font-weight: bold;
+    margin: 0;
+}
+
+h4,
+h5 {}
+
+a,
+a:hover,
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
