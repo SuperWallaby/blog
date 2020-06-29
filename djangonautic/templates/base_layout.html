@@ -17,7 +17,7 @@
 <body>
     <div class="head">
         <div class="head__left">
-            <span class="head__menu wbIconButton">
+            <span class="head__menu hover wbIconButton">
                 <svg xmlns="http://www.w3.org/2000/svg" class="wbIcon" viewBox="0 0 24 24">
                     <path
                         d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-4.5 14c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm4.5 0c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm4.5 0c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5z" />
@@ -35,6 +35,22 @@
     <div class="wrap">
         {%block content%}
         {% endblock %}
+    </div>
+
+    <div class="siteMenu">
+    <div class="siteMenu__content">
+        <h1>Super Wallaby Blog</h1>
+
+        <div>
+            <ul>
+                {% for article in articles %}
+                    <li>
+                        {{article.category}}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        </div>
     </div>
 </body>
 

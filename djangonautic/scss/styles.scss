@@ -1,7 +1,8 @@
-@import "./system/system.scss";
-@import "./component/button.scss";
-@import "./component/head.scss";
-@import "./component/IconButton.scss";
+@import "./system/system";
+@import "./component/button";
+@import "./component/head";
+@import "./component/IconButton";
+@import "./component/menu";
 
 .head {
     background-color: var(--primary-color-pale);
@@ -12,6 +13,7 @@ body {
     margin: 0px;
     display: grid;
 }
+
 
 svg.wbIcon {
     width: 1em;
@@ -32,7 +34,4 @@ h5 {}
 
 a,
 a:hover,
-a:visited {
-    color: #fff;
-    text-decoration: none;
-}
+a:visited {}

@@ -10,8 +10,8 @@
   display: flex;
   vertical-align: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .head__left {
@@ -19,8 +19,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .head__title {
@@ -30,7 +30,7 @@
 .head__profile {
   background-size: 120%;
   background-position: center center;
-  background-image: url(/static/profile--mini.jpg);
+  background-image: url(/static/img/profile--mini.jpg);
 }
 
 .head__menu {

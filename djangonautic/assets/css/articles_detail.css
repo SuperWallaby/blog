@@ -1,5 +1,5 @@
 .article-detail__wrap {
-  max-width: 50rem;
-  padding: 1.25rem;
-  margin: 1.25rem auto;
+  max-width: 800px;
+  padding: 20px;
+  margin: 20px auto;
 }

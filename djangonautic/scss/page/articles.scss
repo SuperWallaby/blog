@@ -1,8 +1,11 @@
-@import "../system/system.scss";
+@import "../system/system";
 
 .articles {
-    height: space(100);
+    margin: 0 auto;
+    width: 90%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     &__p {
         word-break: break-word;
@@ -38,36 +41,28 @@
         flex-direction: column;
         overflow: hidden;
         border-radius: $br2;
+        box-sizing: border-box;
         padding: space(4) space(3);
         width: 18%;
+        height: space(70);
         background-color: var(--grey-level0);
+        margin-bottom: space(4);
 
-        /* Larger than mobile */
-        @media (min-width: 25rem) {
-            width: 90%
+
+        @include response($desktophd) {
+            width: 24%;
         }
 
-    }
-
-
-    /* Larger than tablet */
-    @media (min-width: 46.875rem) {
-        &__article {
-            width: 48%;
-        }
-    }
-
-    /* Larger than desktop */
-    @media (min-width: 62.5rem) {
-        &__article {
+        @include response($desktop) {
             width: 32%;
         }
-    }
 
-    /* Larger than Desktop HD */
-    @media (min-width: 75rem) {
-        &__article {
-            width: 24%;
+        @include response($tablet) {
+            width: 48%;
+        }
+
+        @include response($mobile) {
+            width: 100%
         }
     }
 }

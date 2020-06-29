@@ -1,31 +1,41 @@
-@import "./system/system.scss";
+@import "./system/system";
 
 body {
 	font-weight: 300;
 	line-height: 24pt;
 	color: #323240;
-	line-height: 24pt;
 	font-family: proxima-nova, "Proxima Nova", sans-serif;
 }
 
+
 html {
-	font-size: 1rem;
+	font-size: 1.1rem;
 
-	@include response($desktophd) {
-		font-size: 0.6rem
+	h1 {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 900;
 	}
 
-	@include response($desktophd) {
-		font-size: 0.7rem
-	}
+
 
 	@include response($desktophd) {
+		font-size: 1rem
+	}
+
+
+	@include response($tablet) {
+		font-size: 0.9rem
+	}
+
+
+	@include response($phablet) {
 		font-size: 0.8rem
 	}
 
-	@include response($desktophd) {
-		font-size: 0.9rem
+	@include response($mobile) {
+		font-size: 0.7rem
 	}
+
 }
 
 h1,

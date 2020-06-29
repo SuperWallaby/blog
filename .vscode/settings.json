@@ -1,10 +1,11 @@
 {
-  "python.pythonPath": "C:\\Users\\minjae\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\Scripts\\python.exe",
+  "python.pythonPath": "C:\\Users\\minjae\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
   "editor.formatOnSave": true,
   "html.format.enable": true,
   "emmet.includeLanguages": {
     "django-html": "html"
   },
+  "liveSassCompile.settings.includeItems": ["./djangonautic/scss/styles.scss"],
   "beautify.language": {
     "html": [
       "htm", "html", "django-html"
@@ -13,5 +14,5 @@
   "search.exclude": {
     "**/css": true
   },
-  "search.searchEditor.reusePriorSearchConfiguration": true
+  "search.searchEditor.reusePriorSearchConfiguration": true,
 }

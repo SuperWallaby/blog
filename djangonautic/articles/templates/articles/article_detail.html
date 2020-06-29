@@ -20,6 +20,16 @@
             {% endautoescape %}
         </div>
     </div>
+    {% if article.prevNode %}}
+    <a href="{% url 'articles:detail' slug=article.prevNode %}">
+        <button class="wbButton">{{article.prevNodeTitle}}</button>
+    </a>
+    {% endif %}
+    {% if article.nextNode %}}
+    <a href="{% url 'articles:detail' slug=article.nextNode %}">
+        <button class="wbButton">{{article.nextNodeTitle}}</button>
+    </a>
+    {% endif %}
     <script src="{% static 'tinymce/js/prism.js'%}"> </script>
 </div>
 {% endblock %}

@@ -1,7 +1,21 @@
+/* main #6E0FF7; */
+/* #E4E1F6; */
+/* 1E225E */
+/* F2F1F4 */
+html {
+  color: #1F1F1F;
+  --primary-color: #6E0FF7;
+  --primary-color-dark: #1E225E;
+  --primary-color-pale: #E4E1F6;
+  --primary-color-light: #BDA5FC;
+  --grey-level2: #ACACAC;
+  --grey-level0: #FBFBFD;
+}
+
 .wbIconButton {
   font-size: 2rem;
   background-color: white;
-  border-radius: var(--br-1);
+  border-radius: 1rem;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,6 +29,12 @@
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+}
+
+.wbIconButton.hover:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .wbIconButton--small {
