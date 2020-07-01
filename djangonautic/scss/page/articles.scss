@@ -22,16 +22,18 @@
 
     &__up {
         overflow: hidden;
+        border-radius: $br1;
+        margin-bottom: space(2);
+        overflow: hidden;
     }
 
     &__date {
         color: var(--grey-level2);
     }
 
+
     &__img {
         width: 100%;
-        margin-left: -4.375rem;
-        padding: space(4);
         box-sizing: border-box;
     }
 

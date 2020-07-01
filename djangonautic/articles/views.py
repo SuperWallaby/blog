@@ -3,11 +3,10 @@ from .models import Article
 from django.http import HttpResponse
 
 
+# def generate_stie_map:
+#     articles = Article.objects.all().order_by('date')
+#     articles.
 
-def generate_stie_map:
-    articles = Article.objects.all().order_by('date')
-    articles.
-    
 
 def article_list(request):
     articles = Article.objects.all().order_by('date')

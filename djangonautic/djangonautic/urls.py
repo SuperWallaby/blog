@@ -9,11 +9,11 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('articles.urls')),
+    path('front/', TemplateView.as_view(template_name='index.html')),
     path('about/', views.about),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
+    path('', include('articles.urls')),
     path('tinymce/', include('tinymce.urls')),
-    path('front/', TemplateView.as_view(template_name='index.html')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

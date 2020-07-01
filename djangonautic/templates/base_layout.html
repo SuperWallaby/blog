@@ -36,22 +36,22 @@
         {%block content%}
         {% endblock %}
     </div>
-
+    {% comment %}
     <div class="siteMenu">
-    <div class="siteMenu__content">
-        <h1>Super Wallaby Blog</h1>
+        <div class="siteMenu__content">
+            <h1>Super Wallaby Blog</h1>
 
-        <div>
-            <ul>
-                {% for article in articles %}
+            <div>
+                <ul>
+                    {% for article in articles %}
                     <li>
                         {{article.category}}
                     </li>
-                {% endfor %}
-            </ul>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-        </div>
-    </div>
+    </div> {% endcomment %}
 </body>
 
 </html>

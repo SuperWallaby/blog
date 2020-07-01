@@ -9,6 +9,7 @@ html {
   --primary-color-pale: #E4E1F6;
   --primary-color-light: #BDA5FC;
   --grey-level2: #ACACAC;
+  --grey-level1: #ACACAC;
   --grey-level0: #FBFBFD;
 }
 
@@ -39,6 +40,9 @@ html {
 
 .articles__up {
   overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
 }
 
 .articles__date {
@@ -47,8 +51,6 @@ html {
 
 .articles__img {
   width: 100%;
-  margin-left: -4.375rem;
-  padding: 1.6rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
