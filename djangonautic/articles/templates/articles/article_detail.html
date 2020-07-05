@@ -1,6 +1,6 @@
 {% extends 'base_layout.html' %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
 <head>
@@ -22,14 +22,36 @@
     </div>
     {% if article.prevNode %}}
     <a href="{% url 'articles:detail' slug=article.prevNode %}">
-        <button class="wbButton">{{article.prevNodeTitle}}</button>
+        <button class="wbButton">{{prev_title}}</button>
     </a>
     {% endif %}
+
     {% if article.nextNode %}}
     <a href="{% url 'articles:detail' slug=article.nextNode %}">
-        <button class="wbButton">{{article.nextNodeTitle}}</button>
+        <button class="wbButton">{{next_title}}</button>
     </a>
     {% endif %}
+
+    {% for com in comments %}
+    <h6>{{com.name}}</h6>
+    <p>{{com.body}}</p>
+    {% endfor %}
+
+    <div>
+        {% if new_comment %}
+        <div role="alert">
+            Your comment is awaiting moderation
+        </div>
+        {% else %}
+        <h3>Leave a comment</h3>
+        <form method="post" style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit">Submit</button>
+        </form>
+        {% endif %}
+    </div>
+
     <script src="{% static 'tinymce/js/prism.js'%}"> </script>
 </div>
 {% endblock %}

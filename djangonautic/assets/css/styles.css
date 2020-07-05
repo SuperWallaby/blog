@@ -138,22 +138,6 @@ html {
   background-color: var(--primary-color-pale);
 }
 
-body {
-  background-repeat-y: no-repeat;
-  margin: 0px;
-  display: -ms-grid;
-  display: grid;
-}
-
-svg.wbIcon {
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: bold;
-  margin: 0;
+.hidden {
+  display: none !important;
 }

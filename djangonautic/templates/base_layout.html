@@ -1,3 +1,5 @@
+{% load i18n %}
+
 {% load static %}
 <!DOCTYPE html>
 <html id="root" lang="en">
@@ -5,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Super Wallaby</title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="{% static 'css/normalize.css'%}" />
@@ -13,8 +15,15 @@
     <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
+<script>
+    function changeLang(index) {
+        document.getElementById('LANG_SELECTER').selectedIndex = index;
+        document.langForm.submit();
+    }
+</script>
 
 <body>
+
     <div class="head">
         <div class="head__left">
             <span class="head__menu hover wbIconButton">
@@ -24,9 +33,28 @@
                 </svg>
             </span>
             <h1 class="head__title">
-                <a href="{% url 'articles:list' %}"> Super Wallaby Blog</a>
+                <a href="{% url 'articles:list' %}">{% trans "Super Wallaby Blog" %}</a>
             </h1>
         </div>
+
+        <form name="langForm" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            {% if LANGUAGE_CODE == 'ko'%}
+            <div onclick="changeLang(1)" class="wbIconButton">ko</div>
+            {% else %}
+            <div onclick="changeLang(0)" class="wbIconButton">en</div>
+            {% endif %}
+            <input name="next" type="hidden" value="{{redirect_to}}" />
+            <select id="LANG_SELECTER" class="hidden" name="language" onchange="this.form.submit()" id="">
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages%}
+                {% for language in languages %}
+                <option value="{{language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                    {{language.name_local}} {{language.code}}
+                </option>
+                {% endfor %}
+            </select>
+        </form>
         <a href="/about">
             <div class="head__profile wbIconButton wbIconButton--small">
             </div>
@@ -36,8 +64,7 @@
         {%block content%}
         {% endblock %}
     </div>
-    {% comment %}
-    <div class="siteMenu">
+    {% comment %} <div class="siteMenu">
         <div class="siteMenu__content">
             <h1>Super Wallaby Blog</h1>
 

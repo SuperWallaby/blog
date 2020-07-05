@@ -5,7 +5,7 @@
   "emmet.includeLanguages": {
     "django-html": "html"
   },
-  "liveSassCompile.settings.includeItems": ["./djangonautic/scss/styles.scss"],
+  "liveSassCompile.settings.includeItems": ["./scss/styles.scss"],
   "beautify.language": {
     "html": [
       "htm", "html", "django-html"
