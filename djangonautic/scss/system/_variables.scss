@@ -14,8 +14,9 @@ html {
 }
 
 
-$br1: 1rem;
-$br2: 1rem;
+$br1: 0.8rem unquote("/") 0.7rem;
+$br2: 1rem unquote("/") 0.9rem;
+$br3: 2.2rem unquote("/") 1.8rem;
 
 $mobile: "400px" !default; // sm
 $phablet: "550px" !default; //  md

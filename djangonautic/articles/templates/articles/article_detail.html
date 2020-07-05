@@ -11,7 +11,7 @@
 
 
 <div class="article-detail">
-    <div class="article-detail__wrap" class="article">
+    <div class="article-detail__article" class="article">
         <h2>{{ article.title }}</h2>
         <p>{{ article.date }}</p>
         <div>
@@ -37,17 +37,16 @@
     <p>{{com.body}}</p>
     {% endfor %}
 
-    <div>
+    <div class="comment">
         {% if new_comment %}
         <div role="alert">
             Your comment is awaiting moderation
         </div>
         {% else %}
-        <h3>Leave a comment</h3>
-        <form method="post" style="margin-top: 1.3em;">
+        <h2 class="comment__title primary-color">Leave a comment</h2>
+        <form method="post">
             {{ comment_form | crispy }}
-            {% csrf_token %}
-            <button type="submit">Submit</button>
+            <button class="comment__submit wbButton" type="submit">Submit</button>
         </form>
         {% endif %}
     </div>

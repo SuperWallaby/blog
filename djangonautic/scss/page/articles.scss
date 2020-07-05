@@ -68,3 +68,17 @@
         }
     }
 }
+
+
+.articleList {
+    background-color: white;
+    padding-bottom: space(4);
+
+
+    .pagination {
+        margin: 0 auto;
+        border-radius: $br1;
+        width: max-content;
+    }
+
+}

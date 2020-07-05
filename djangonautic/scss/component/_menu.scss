@@ -1,16 +1,140 @@
 .siteMenu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
+	z-index: 30;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, .8);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+
 
 	&__content {
+		border-radius: $br3;
 		background-color: white;
 		padding: space(4);
+		position: relative;
+		z-index: 10;
+	}
+
+	&__curtton {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, .85);
+	}
+}
+
+
+html {
+
+	&.startedNav .content {
+		animation: blowUpContentTwo .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+	}
+
+	&.startedNav .siteMenu {
+		&__content {
+			animation: blowUpModalTwo .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+		}
+
+		&__curtton {
+			animation: fadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+		}
+	}
+
+	&.out .siteMenu {
+		&__content {
+			animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+		}
+
+		&__curtton {
+			animation: fadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+		}
+	}
+
+	&.out .content {
+		animation: blowUpContent .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+	}
+
+	&.out body {
+		overflow: hidden !important;
+	}
+}
+
+
+
+
+@keyframes blowUpContent {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	99.9% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
+
+@keyframes blowUpContentTwo {
+	0% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes blowUpModal {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes blowUpModalTwo {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		background: rgba(0, 0, 0, .0);
+	}
+
+	100% {
+		background: rgba(0, 0, 0, .8);
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		background: rgba(0, 0, 0, .8);
+	}
+
+	100% {
+		background: rgba(0, 0, 0, .0);
 	}
 }

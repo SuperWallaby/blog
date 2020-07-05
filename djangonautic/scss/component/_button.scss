@@ -6,8 +6,15 @@
     border-radius: $br1;
     color: white;
     border: none;
-    padding: 1rem;
+    padding: space(2.5) space(3);
     width: 100%;
     box-sizing: border-box;
     outline: none;
+
+    &:hover {
+        cursor: pointer;
+        border: 1px solid var(--primary-color);
+        background-color: white;
+        color: var(--primary-color);
+    }
 }

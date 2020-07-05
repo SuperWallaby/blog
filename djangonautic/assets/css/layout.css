@@ -2,6 +2,7 @@
 /* #E4E1F6; */
 /* 1E225E */
 /* F2F1F4 */
+@import url("https://www.fontify.me/wf/b4bf8aa85a7e35fd018945b766e8bc6d");
 html {
   color: #1F1F1F;
   --primary-color: #6E0FF7;
@@ -9,6 +10,7 @@ html {
   --primary-color-pale: #E4E1F6;
   --primary-color-light: #BDA5FC;
   --grey-level2: #ACACAC;
+  --grey-level1: #ACACAC;
   --grey-level0: #FBFBFD;
 }
 
@@ -17,20 +19,42 @@ body {
   line-height: 24pt;
   color: #323240;
   font-family: proxima-nova, "Proxima Nova", sans-serif;
+  background-color: var(--primary-color-pale);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 html {
-  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  font-size: 1.0rem;
 }
 
-html h1 {
-  font-family: 'Open Sans', sans-serif;
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  font-family: font93040;
+  line-height: unset;
   font-weight: 900;
 }
 
 @media only screen and (max-width: 1200px) and (min-width: 0px) {
   html {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -60,4 +84,28 @@ h3 {
 
 code {
   font-size: 0.8rem;
+}
+
+svg.wbIcon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.wrap {
+  padding-top: 2.4rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  background-color: white;
+  border-radius: 2.2rem / 1.8rem;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }

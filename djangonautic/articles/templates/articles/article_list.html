@@ -7,20 +7,52 @@
 <head>
     <link rel="stylesheet" href="{% static 'css/articles.css'%}" />
 </head>
-<div class="articles">
-    {% for article in articles %}
-    <div class="column articles__article">
-        <div class="articles__up">
-            <h2 class="articles__title">{{article.title}}</h2>
-            <span class="articles__date">{{article.date}}</span>
-            <p class="articles__p">{{article.snippet}}</p>
-            <img class="articles__img" src="{{ article.thumb.url }}" />
+<div class="articleList">
+    <div class="articles">
+        {% for article in articles %}
+        <div class="column articles__article">
+            <div class="articles__up">
+                <h2 class="articles__title">{{article.title}}</h2>
+                <span class="articles__date">{{article.date}}</span>
+                <p class="articles__p">{{article.snippet}}</p>
+                <img class="articles__img" src="{{ article.thumb.url }}" />
+            </div>
+            <a href="{% url 'articles:detail' slug=article.slug %}">
+                <button class="articles__btn wbButton">
+                    {% trans "Read More" %}
+                </button></a>
         </div>
-        <a href="{% url 'articles:detail' slug=article.slug %}">
-            <button class="articles__btn wbButton">
-                {% trans "Read More" %}
-            </button></a>
+        {% endfor %}
+
     </div>
-    {% endfor %}
+
+    <div class="pagination">
+        {% comment %} {{articles.has_previous}}
+        {{articles.number}}
+        {{articles.count}}
+        {{articles.num_pages}}
+        {{articles.page_range}}
+        {{articles.has_next}} {% endcomment %}
+
+        {% if articles.has_previous %}
+        <a class="pagination__li" href="?page={{articles.previous_page_number}}"> - </a>
+        {% endif %}
+
+        {% for num in articles.paginator.page_range %}
+
+        {% if articles.number == num %}
+        <a class="pagination__li pagination__li--selected"> {{num}}</a>
+        {% elif num > articles.number|add:'-3' and num < articles.number|add:'3' %}
+        <a class="pagination__li" href="?page={{num}}"> {{num}} </a>
+        {% endif %}
+
+        {% endfor %}
+
+        {% if articles.has_next %}
+        <a class="pagination__li" href="?page={{articles.next_page_number}}"> + </a>
+        {% endif %}
+
+
+    </div>
 </div>
 {% endblock %}

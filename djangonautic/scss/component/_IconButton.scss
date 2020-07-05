@@ -2,21 +2,22 @@
     font-size: 2rem;
     background-color: white;
     border-radius: $br1;
-    padding: 1rem;
+    width: 4rem;
+    height: 4rem;
     display: flex;
     align-items: center;
+    line-height: 100%;
     justify-content: center;
-    width: min-content;
     transition: 0.3s;
     transition-timing-function: cubic-bezier(0.12, 1.1, 1.0);
 
+    &--small {
+        width: 3rem;
+        height: 3rem;
+    }
 
     &.hover:hover {
         cursor: pointer;
         color: var(--primary-color);
     }
-}
-
-.wbIconButton--small {
-    padding: 1.5rem;
 }

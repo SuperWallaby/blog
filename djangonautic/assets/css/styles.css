@@ -30,23 +30,32 @@ html {
 
 .wbButton {
   background-color: var(--primary-color);
-  border-radius: 1rem;
+  border-radius: 0.8rem / 0.7rem;
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
 }
 
+.wbButton:hover {
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  background-color: white;
+  color: var(--primary-color);
+}
+
 #root .head__title a {
   color: var(--primary-color-dark);
 }
 
-.head {
-  background-color: white;
-  padding: 2.5rem;
+html .head {
+  position: relative;
+  z-index: 10;
+  padding: 2.4rem;
+  padding-top: 3.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,7 +65,7 @@ html {
           justify-content: space-between;
 }
 
-.head__left {
+html .head__left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,41 +74,101 @@ html {
           align-items: center;
 }
 
-.head__title {
-  margin-left: 5rem;
+html .head__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.head__profile {
+html .head__lang {
+  color: var(--primary-color-light);
+  margin-right: 1.2rem;
+}
+
+html .head__title {
+  margin-left: 8rem;
+}
+
+html .head__title a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 750px) and (min-width: 0px) {
+  html .head__title {
+    margin-left: 0;
+  }
+}
+
+html .head__profile {
   background-size: 120%;
   background-position: center center;
   background-image: url(/static/img/profile--mini.jpg);
+  border: 2px solid white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 12px white;
+          box-shadow: 0px 0px 12px white;
 }
 
-.head__menu {
+html .menu {
   color: var(--primary-color-light);
+  position: absolute;
+  top: 2.4rem;
+  left: 2.4rem;
+  z-index: 20;
+}
+
+@media only screen and (max-width: 750px) and (min-width: 0px) {
+  html .menu {
+    position: fixed;
+    z-index: 90;
+    right: 1.6rem;
+    bottom: 2.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: var(--primary-color);
+    color: white;
+    -webkit-box-shadow: 0px 0px 1.6rem var(--primary-color-light), 0px 0px 0.4rem rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 0px 1.6rem var(--primary-color-light), 0px 0px 0.4rem rgba(255, 255, 255, 0.9);
+  }
+  html .menu:hover {
+    background-color: white;
+    color: var(--primary-color);
+  }
 }
 
 .wbIconButton {
   font-size: 2rem;
   background-color: white;
-  border-radius: 1rem;
-  padding: 1rem;
+  border-radius: 0.8rem / 0.7rem;
+  width: 4rem;
+  height: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  line-height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   -webkit-transition-timing-function: cubic-bezier(0.12, 1.1, 1);
           transition-timing-function: cubic-bezier(0.12, 1.1, 1);
+}
+
+.wbIconButton--small {
+  width: 3rem;
+  height: 3rem;
 }
 
 .wbIconButton.hover:hover {
@@ -107,17 +176,7 @@ html {
   color: var(--primary-color);
 }
 
-.wbIconButton--small {
-  padding: 1.5rem;
-}
-
 .siteMenu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,15 +186,250 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 30;
+  bottom: 0;
 }
 
 .siteMenu__content {
+  border-radius: 2.2rem / 1.8rem;
   background-color: white;
   padding: 1.6rem;
+  position: relative;
+  z-index: 10;
 }
 
-.head {
+.siteMenu__curtton {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+html.startedNav .content {
+  -webkit-animation: blowUpContentTwo 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: blowUpContentTwo 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+html.startedNav .siteMenu__content {
+  -webkit-animation: blowUpModalTwo 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: blowUpModalTwo 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+html.startedNav .siteMenu__curtton {
+  -webkit-animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+html.out .siteMenu__content {
+  -webkit-animation: blowUpModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: blowUpModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+html.out .siteMenu__curtton {
+  -webkit-animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+html.out .content {
+  -webkit-animation: blowUpContent 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: blowUpContent 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+html.out body {
+  overflow: hidden !important;
+}
+
+@-webkit-keyframes blowUpContent {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  99.9% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes blowUpContent {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  99.9% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes blowUpContentTwo {
+  0% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes blowUpContentTwo {
+  0% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blowUpModal {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes blowUpModal {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes blowUpModalTwo {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes blowUpModalTwo {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+.wbTextArea,
+.wbInputText {
+  padding: 0.4rem;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--grey-level2);
+  margin-bottom: 1.6rem;
+  line-height: 1.5;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: var(--primary-color-pale);
+  padding: 0.2rem;
+}
+
+.pagination__li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 0.8rem / 0.7rem;
+  width: 2rem;
+  height: 2rem;
+  text-decoration: none;
+}
+
+.pagination__li--selected {
+  background-color: white;
+  color: var(--primary-color);
 }
 
 .hidden {

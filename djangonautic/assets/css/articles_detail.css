@@ -1,5 +1,36 @@
-.article-detail__wrap {
+/* main #6E0FF7; */
+/* #E4E1F6; */
+/* 1E225E */
+/* F2F1F4 */
+html {
+  color: #1F1F1F;
+  --primary-color: #6E0FF7;
+  --primary-color-dark: #1E225E;
+  --primary-color-pale: #E4E1F6;
+  --primary-color-light: #BDA5FC;
+  --grey-level2: #ACACAC;
+  --grey-level1: #ACACAC;
+  --grey-level0: #FBFBFD;
+}
+
+.article-detail {
   max-width: 800px;
-  padding: 20px;
-  margin: 20px auto;
+  padding: 2rem;
+  padding-top: 0.4rem;
+  margin: 2rem auto;
+  margin-top: 0;
+}
+
+.article-detail__article {
+  margin-bottom: 8rem;
+}
+
+.comment__title {
+  margin-bottom: 2rem;
+}
+
+.comment__submit {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }

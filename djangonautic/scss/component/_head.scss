@@ -2,9 +2,11 @@
     color: var(--primary-color-dark);
 }
 
-.head {
-    background-color: white;
-    padding: 2.5rem;
+html .head {
+    position: relative;
+    z-index: 10;
+    padding: space(6);
+    padding-top: space(9);
     display: flex;
     vertical-align: center;
     justify-content: space-between;
@@ -14,17 +16,67 @@
         align-items: center;
     }
 
+    &__right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__lang {
+        color: var(--primary-color-light);
+
+        margin-right: space(3);
+    }
+
     &__title {
-        margin-left: 5rem;
+        a {
+            text-decoration: none;
+        }
+
+        margin-left: 8rem;
+
+        @include response($tablet) {
+            margin-left: 0;
+        }
     }
 
     &__profile {
         background-size: 120%;
         background-position: center center;
         background-image: url(/static/img/profile--mini.jpg);
+
+        border: 2px solid white;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 12px white;
     }
 
-    &__menu {
-        color: var(--primary-color-light);
+}
+
+html .menu {
+    color: var(--primary-color-light);
+
+    position: absolute;
+    top: 2.4rem;
+    left: 2.4rem;
+    z-index: 20;
+
+
+    @include response($tablet) {
+
+        position: fixed;
+        z-index: 90;
+        right: space(4);
+        bottom: space(6);
+        display: flex;
+        justify-content: center;
+
+        background-color: var(--primary-color);
+        color: white;
+        box-shadow: 0px 0px space(4) var(--primary-color-light),
+            0px 0px space(1) rgba(255, 255, 255, 0.9);
+
+        &:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
     }
 }

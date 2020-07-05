@@ -1,24 +1,40 @@
 @import "./system/system";
+@import url('https://www.fontify.me/wf/b4bf8aa85a7e35fd018945b766e8bc6d');
 
 body {
 	font-weight: 300;
 	line-height: 24pt;
 	color: #323240;
 	font-family: proxima-nova, "Proxima Nova", sans-serif;
+	background-color: var(--primary-color-pale);
+	flex: 1 1;
+	display: flex;
+	flex-direction: column;
 }
 
 html {
-	font-size: 1.1rem;
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+	font-size: 1.0rem;
 
-	h1 {
-		font-family: 'Open Sans', sans-serif;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: font93040;
+		line-height: unset;
 		font-weight: 900;
 	}
 
 
 
+
+
 	@include response($desktophd) {
-		font-size: 1rem
+		font-size: 0.95rem
 	}
 
 
@@ -47,7 +63,6 @@ code {
 	font-size: 0.8rem;
 }
 
-
 svg.wbIcon {
 	width: 1em;
 	height: 1em;
@@ -60,4 +75,13 @@ h3 {
 
 	font-weight: bold;
 	margin: 0;
+}
+
+.wrap {
+	padding-top: space(6);
+	flex: 1 1;
+	background-color: white;
+	border-radius: $br3;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
 }

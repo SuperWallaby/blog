@@ -1,5 +1,23 @@
-.article-detail__wrap {
+@import "../system/system";
+
+.article-detail {
     max-width: 800px;
-    padding: 20px;
-    margin: 20px auto;
+    padding: space(5);
+    padding-top: space(1);
+    margin: space(5) auto;
+    margin-top: 0;
+
+    &__article {
+        margin-bottom: space(20);
+    }
+}
+
+.comment {
+    &__title {
+        margin-bottom: space(5);
+    }
+
+    &__submit {
+        width: min-content;
+    }
 }

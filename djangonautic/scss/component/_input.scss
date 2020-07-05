@@ -1,0 +1,9 @@
+.wbTextArea,
+.wbInputText {
+    padding: space(1);
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--grey-level2);
+    margin-bottom: space(4);
+    line-height: 1.5;
+}

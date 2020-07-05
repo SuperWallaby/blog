@@ -3,13 +3,11 @@
 @import "./component/head";
 @import "./component/IconButton";
 @import "./component/menu";
+@import "./component/input";
+@import "./component/pagination";
 
-.head {
-    background-color: var(--primary-color-pale);
-}
 
 
 .hidden {
     display: none !important;
-
 }

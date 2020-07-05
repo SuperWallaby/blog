@@ -4,7 +4,8 @@ from django.http import HttpResponse
 from .forms import CommentForm
 from django.shortcuts import get_object_or_404
 from django.utils import translation
-   
+from django.core.paginator import Paginator
+
 # def generate_stie_map:
 #     articles = Article.objects.all().order_by('date')
 #     articles.
@@ -32,7 +33,12 @@ def article_list(request):
     # translation.activate(user_language)
     # request.session[translation.LANGUAGE_SESSION_KEY] = user_language
 
+    all_articles = Article.objects.all()
     articles = Article.objects.filter(is_ready=True).order_by('date')
+    paginator = Paginator(articles,3)
+    page = request.GET.get('page')
+
+    articles = paginator.get_page(page)
 
     if is_ko(request):
         for article in articles:
