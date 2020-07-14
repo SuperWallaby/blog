@@ -1,82 +1,79 @@
 #root .head__title a {
-    color: var(--primary-color-dark);
+	color: var(--primary-color-dark);
 }
 
 html .head {
-    position: relative;
-    z-index: 10;
-    padding: space(6);
-    padding-top: space(9);
-    display: flex;
-    vertical-align: center;
-    justify-content: space-between;
+	position: relative;
+	z-index: 10;
+	padding: space(6);
+	padding-top: space(9);
+	display: flex;
+	vertical-align: center;
+	justify-content: space-between;
 
-    &__left {
-        display: flex;
-        align-items: center;
-    }
+	&__left {
+		display: flex;
+		align-items: center;
+	}
 
-    &__right {
-        display: flex;
-        align-items: center;
-    }
+	&__right {
+		display: flex;
+		align-items: center;
+	}
 
-    &__lang {
-        color: var(--primary-color-light);
+	&__lang {
+		color: var(--primary-color-light);
 
-        margin-right: space(3);
-    }
+		margin-right: space(3);
+	}
 
-    &__title {
-        a {
-            text-decoration: none;
-        }
+	&__title {
+		a {
+			text-decoration: none;
+		}
 
-        margin-left: 8rem;
+		margin-left: 8rem;
 
-        @include response($tablet) {
-            margin-left: 0;
-        }
-    }
+		@include response($tablet) {
+			margin-left: 0;
+		}
+	}
 
-    &__profile {
-        background-size: 120%;
-        background-position: center center;
-        background-image: url(/static/img/profile--mini.jpg);
+	&__profile {
+		background-size: 120%;
+		background-position: center center;
+		background-image: url(/static/img/profile--mini.jpg);
 
-        border: 2px solid white;
-        box-sizing: border-box;
-        box-shadow: 0px 0px 12px white;
-    }
-
+		border: 2px solid white;
+		box-sizing: border-box;
+		box-shadow: 0px 0px 12px white;
+	}
 }
 
 html .menu {
-    color: var(--primary-color-light);
+	color: var(--primary-color-light);
+	position: absolute;
+	top: 2.4rem;
+	left: 2.4rem;
+	z-index: 20;
 
-    position: absolute;
-    top: 2.4rem;
-    left: 2.4rem;
-    z-index: 20;
+	@include response($tablet) {
+		position: fixed;
+		z-index: 90;
+		top: unset;
+		left: unset;
+		right: space(4);
+		bottom: space(6);
+		display: flex;
+		justify-content: center;
 
+		background-color: var(--primary-color);
+		color: white;
+		box-shadow: 0px 0px space(4) var(--primary-color-light), 0px 0px space(1) rgba(255, 255, 255, 0.9);
 
-    @include response($tablet) {
-
-        position: fixed;
-        z-index: 90;
-        right: space(4);
-        bottom: space(6);
-        display: flex;
-        justify-content: center;
-
-        background-color: var(--primary-color);
-        color: white;
-        box-shadow: 0px 0px space(4) var(--primary-color-light),
-            0px 0px space(1) rgba(255, 255, 255, 0.9);
-
-        &:hover {
-            background-color: white;
-            color: var(--primary-color);
-        }
-    }
+		&:hover {
+			background-color: white;
+			color: var(--primary-color);
+		}
+	}
 }

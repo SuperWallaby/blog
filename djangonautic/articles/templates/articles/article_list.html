@@ -15,7 +15,7 @@
                 <h2 class="articles__title">{{article.title}}</h2>
                 <span class="articles__date">{{article.date}}</span>
                 <p class="articles__p">{{article.snippet}}</p>
-                <img class="articles__img" src="{{ article.thumb.url }}" />
+                <div class="articles__img" style="background-image: url('{{ article.thumb.url}}')"> </div>
             </div>
             <a href="{% url 'articles:detail' slug=article.slug %}">
                 <button class="articles__btn wbButton">

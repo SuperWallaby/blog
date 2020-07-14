@@ -80,15 +80,57 @@
 
         <div id="SITE_MENU" class="siteMenu hidden">
             <div onclick="prevent" class="siteMenu__content">
-                <h1>Super Wallaby Blog</h1>
-
                 <div>
-                    <ul>
-                        {% for article in articles %}
-                        <li>
-                            {{article.category}}
+
+                    <ul class="siteMenu__list">
+                        <li class=" {% if request.path  == '/'%} siteMenu__li--selected {% endif %}" onclick="">
+                            <h1>
+                                All
+                                <h6 class="siteMenu__countBadge">
+                                    {{django}}
+                                </h6>
+                            </h1>
                         </li>
-                        {% endfor %}
+                        <li>
+                            <h1>
+                                Django
+                                <h6 class="siteMenu__countBadge">
+                                    {{django}}
+                                </h6>
+                            </h1>
+                        </li>
+                        <li>
+                            <h1>
+                                React
+                                <h6 class="siteMenu__countBadge">
+                                    {{react}}
+                                </h6>
+                            </h1>
+                        </li>
+                        <li>
+                            <h1>
+                                Scss
+                                <h6 class="siteMenu__countBadge">
+                                    {{scss}}
+                                </h6>
+                            </h1>
+                        </li>
+                        <li>
+                            <h1>
+                                Life
+                                <h6 class="siteMenu__countBadge">
+                                    {{life}}
+                                </h6>
+                            </h1>
+                        </li>
+                        <li>
+                            <h1>
+                                English
+                                <h6 class="siteMenu__countBadge">
+                                    {{english}}
+                                </h6>
+                            </h1>
+                        </li>
                     </ul>
                 </div>
             </div>

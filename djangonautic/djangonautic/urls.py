@@ -12,14 +12,14 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('front/', TemplateView.as_view(template_name='index.html')),
-    path('about/', views.about),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
     path('tinymce/', include('tinymce.urls')),
     path('', include('articles.urls')),
+    path('about/', views.about),
     path('admin/', admin.site.urls)
 ]
 
-# urlpatterns += i18n_patterns(path('', include('articles.urls')),, prefix_default_language=False,)
+urlpatterns += i18n_patterns(path('', include('articles.urls')), prefix_default_language=False)
 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

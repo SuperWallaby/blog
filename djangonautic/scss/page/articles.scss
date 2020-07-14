@@ -33,8 +33,12 @@
 
 
     &__img {
-        width: 100%;
-        box-sizing: border-box;
+        border-radius: $br1;
+        padding-bottom: 65%;
+        height: 0px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center
     }
 
     &__article {
@@ -46,7 +50,7 @@
         box-sizing: border-box;
         padding: space(4) space(3);
         width: 18%;
-        height: space(70);
+        height: space(73);
         background-color: var(--grey-level0);
         margin-bottom: space(4);
 

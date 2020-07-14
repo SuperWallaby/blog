@@ -10,6 +10,16 @@ from django.core.paginator import Paginator
 #     articles = Article.objects.all().order_by('date')
 #     articles.
 
+import re
+
+def is_mobile(request):
+    MOBILE_AGENT_RE=re.compile(r".*(iphone|mobile|androidtouch)",re.IGNORECASE)
+
+    if MOBILE_AGENT_RE.match(request.META['HTTP_USER_AGENT']):
+        return True
+    else:
+        return False
+
 
 def is_ko(request):
     if translation.LANGUAGE_SESSION_KEY in request.session:
@@ -35,10 +45,24 @@ def article_list(request):
 
     all_articles = Article.objects.all()
     articles = Article.objects.filter(is_ready=True).order_by('date')
-    paginator = Paginator(articles,3)
+    paginator = Paginator(articles,10)
     page = request.GET.get('page')
-
     articles = paginator.get_page(page)
+
+    def check(x, str):
+        return x.tagString.find(str) != -1
+
+    def find(str):
+        return list(filter(lambda x: check(x, str), all_articles))
+
+    def lenOf(str):
+        return len(find(str))
+
+    react = lenOf('React')
+    django = lenOf('Django')
+    scss = lenOf('Sass')
+    english = lenOf('english')
+    life = lenOf('life')
 
     if is_ko(request):
         for article in articles:
@@ -46,7 +70,16 @@ def article_list(request):
             article.title = article.title_ko
             article.description = article.description_ko
 
-    return render(request, 'articles/article_list.html', {'articles': articles})
+    context = {
+        'articles':articles, 
+        'life':life, 
+        'react':react,
+        'django':django,
+        'scss':scss,
+        'english':english
+    }
+
+    return render(request, 'articles/article_list.html',context)
 
 def article_detail(request, slug):
     template_name = 'articles/article_detail.html'
@@ -60,13 +93,13 @@ def article_detail(request, slug):
         next_article = Article.objects.get(slug=article.nextNode)
         next_title = next_article.title
         if is_ko(request):
-                next_title = next_article.title_ko
+            next_title = next_article.title_ko
 
     if article.prevNode:
         prev_article = Article.objects.get(slug=article.prevNode)
         prev_title = prev_article.title
         if is_ko(request):
-                prev_title = prev_article.title_ko
+            prev_title = prev_article.title_ko
 
     
 

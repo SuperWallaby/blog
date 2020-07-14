@@ -38,6 +38,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
+  height: 3.125rem;
 }
 
 .wbButton:hover {
@@ -125,6 +126,8 @@ html .menu {
   html .menu {
     position: fixed;
     z-index: 90;
+    top: unset;
+    left: unset;
     right: 1.6rem;
     bottom: 2.4rem;
     display: -webkit-box;
@@ -194,10 +197,47 @@ html .menu {
   bottom: 0;
 }
 
+.siteMenu__countBadge {
+  display: inline;
+  margin: 0;
+  line-height: 0.4rem;
+  vertical-align: top;
+  color: var(--grey-level2);
+}
+
+.siteMenu__list {
+  padding: 0;
+  list-style: none;
+}
+
+.siteMenu__li--selected h1 {
+  color: var(--primary-color-dark) !important;
+}
+
+.siteMenu__list li {
+  margin: 0;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 3.2rem;
+  padding-right: 6.4rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.siteMenu__list li h1 {
+  color: var(--primary-color);
+}
+
+.siteMenu__list li:hover {
+  background-color: var(--grey-level0);
+}
+
 .siteMenu__content {
+  padding: 0.8rem;
   border-radius: 2.2rem / 1.8rem;
   background-color: white;
-  padding: 1.6rem;
   position: relative;
   z-index: 10;
 }

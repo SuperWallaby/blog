@@ -9,11 +9,54 @@
 	z-index: 30;
 	bottom: 0;
 
+	&__countBadge {
+		display: inline;
+		margin: 0;
+		line-height: space(1);
+		vertical-align: top;
+		color: var(--grey-level2);
+	}
+
+	&__list {
+		padding: 0;
+		list-style: none;
+
+	}
+
+	&__li {
+		&--selected {
+
+			h1 {
+				color: var(--primary-color-dark) !important;
+			}
+		}
+	}
+
+	&__list li {
+		margin: 0;
+		padding-top: space(2);
+		padding-bottom: space(2);
+		padding-left: space(8);
+		padding-right: space(16);
+
+		h1 {
+			color: var(--primary-color);
+		}
+
+
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--grey-level0);
+		}
+
+		display: flex;
+	}
 
 	&__content {
+		padding: space(2);
 		border-radius: $br3;
 		background-color: white;
-		padding: space(4);
 		position: relative;
 		z-index: 10;
 	}

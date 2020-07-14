@@ -1,0 +1,23 @@
+{% extends 'base_layout.html'%}
+
+{% load static %}
+
+{%block content %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/about.css'%}" />
+</head>
+<div class="about">
+    <div class="about__photoWrap">
+        <div class="about__photo">
+            <img class="about__img" src="{% static 'img/profile--big.jpg'%}" />
+        </div>
+    </div>
+
+    <div class="wbIconButton">
+    </div>
+
+    <div class="wbIconButton">
+    </div>
+</div>
+{% endblock %}

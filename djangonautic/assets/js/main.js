@@ -25,6 +25,8 @@ function toggleSideNav() {
         root.classList.remove('out');
     else
         root.classList.add('out');
+
+    
 }
 
 function prevent(e) {
