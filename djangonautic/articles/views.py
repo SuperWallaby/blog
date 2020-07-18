@@ -5,6 +5,7 @@ from .forms import CommentForm
 from django.shortcuts import get_object_or_404
 from django.utils import translation
 from django.core.paginator import Paginator
+import datetime
 
 # def generate_stie_map:
 #     articles = Article.objects.all().order_by('date')
@@ -85,6 +86,7 @@ def article_detail(request, slug):
     template_name = 'articles/article_detail.html'
     article = get_object_or_404(Article, slug=slug)
     comments = article.comments.filter(active=True)
+    new_comment_date = None
     new_comment = None
     next_title = None
     prev_title = None
@@ -112,6 +114,8 @@ def article_detail(request, slug):
             new_comment = comment_form.save(commit=False)
             # Assign the current post to the comment
             new_comment.article = article
+
+            new_comment_date = datetime.datetime.now()
             # Save the comment to the database
             new_comment.save()
     else:
@@ -120,6 +124,7 @@ def article_detail(request, slug):
     return render(request, template_name, {'article': article,
                                            'comments': comments,
                                            'new_comment': new_comment,
+                                           'new_comment_date': new_comment_date,
                                            'comment_form': comment_form,
                                            'next_title': next_title,
                                            'prev_title': prev_title,

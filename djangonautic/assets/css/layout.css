@@ -1,10 +1,19 @@
+@import url("https://www.fontify.me/wf/b4bf8aa85a7e35fd018945b766e8bc6d");
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(/static/font/FontsFree-Net-Proxima-Nova-Soft-W03-Regular.ttf) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* main #6E0FF7; */
 /* #E4E1F6; */
 /* 1E225E */
 /* F2F1F4 */
-@import url("https://www.fontify.me/wf/b4bf8aa85a7e35fd018945b766e8bc6d");
 html {
   color: #1F1F1F;
+  --warn-color: #F2853C;
+  --warn-color-light: #FBDBC6;
   --primary-color: #6E0FF7;
   --primary-color-dark: #1E225E;
   --primary-color-pale: #E4E1F6;
@@ -14,11 +23,21 @@ html {
   --grey-level0: #FBFBFD;
 }
 
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  line-height: unset;
+  font-weight: 900;
+}
+
 body {
   font-weight: 300;
   line-height: 1.98rem;
   color: #323240;
-  font-family: proxima-nova, "Proxima Nova", sans-serif;
+  font-family: "Proxima Nova";
   background-color: var(--primary-color-pale);
   -webkit-box-flex: 1;
       -ms-flex: 1 1;
@@ -41,15 +60,10 @@ html {
   font-size: 1.0rem;
 }
 
-html h1,
-html h2,
-html h3,
 html h4,
 html h5,
 html h6 {
-  font-family: font93040;
-  line-height: unset;
-  font-weight: 900;
+  margin: 0;
 }
 
 @media only screen and (max-width: 1200px) and (min-width: 0px) {

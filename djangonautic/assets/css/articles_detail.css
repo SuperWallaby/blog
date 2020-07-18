@@ -1,32 +1,17 @@
-/* main #6E0FF7; */
-/* #E4E1F6; */
-/* 1E225E */
-/* F2F1F4 */
-html {
-  color: #1F1F1F;
-  --primary-color: #6E0FF7;
-  --primary-color-dark: #1E225E;
-  --primary-color-pale: #E4E1F6;
-  --primary-color-light: #BDA5FC;
-  --grey-level2: #ACACAC;
-  --grey-level1: #ACACAC;
-  --grey-level0: #FBFBFD;
-}
-
 .article-detail {
   max-width: 800px;
-  padding: 2rem;
-  padding-top: 0.4rem;
-  margin: 2rem auto;
+  padding: space(5);
+  padding-top: space(1);
+  margin: space(5) auto;
   margin-top: 0;
 }
 
 .article-detail__article {
-  margin-bottom: 8rem;
+  margin-bottom: space(20);
 }
 
 .comment__title {
-  margin-bottom: 2rem;
+  margin-bottom: space(5);
 }
 
 .comment__submit {

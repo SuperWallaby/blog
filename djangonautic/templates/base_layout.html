@@ -19,7 +19,7 @@
 
 <body>
     <div>
-        <span onclick="toggleSideNav()" class="menu hover wbIconButton">
+        <span onclick="toggleSideNav()" class="menu hover wbIconButton wbIconButton--large">
             <svg xmlns="http://www.w3.org/2000/svg" class="wbIcon" viewBox="0 0 24 24">
                 <path
                     d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-4.5 14c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm4.5 0c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm4.5 0c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5z" />
@@ -38,7 +38,7 @@
                     <form class="head__lang" name="langForm" action="{% url 'set_language' %}" method="post">
                         {% csrf_token %}
                         {% if LANGUAGE_CODE == 'ko'%}
-                        <div onclick="changeLang(1)" class="hover wbIconButton wbIconButton--small">
+                        <div onclick="changeLang(1)" class="hover wbIconButton wbIconButton">
                             <svg class="wbIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24">
                                 <path
@@ -46,7 +46,7 @@
                             </svg>
                         </div>
                         {% else %}
-                        <div onclick="changeLang(0)" class="hover wbIconButton wbIconButton--small">
+                        <div onclick="changeLang(0)" class="hover wbIconButton wbIconButton">
                             <svg class="wbIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24">
                                 <path
@@ -67,7 +67,7 @@
                         </select>
                     </form>
                     <a href="/about">
-                        <div class="head__profile wbIconButton wbIconButton--small">
+                        <div class="head__profile wbIconButton wbIconButton">
                         </div>
                     </a>
                 </div>

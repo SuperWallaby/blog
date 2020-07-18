@@ -4,20 +4,28 @@
 
 {%block content %}
 
+<style>
+    .wrap {
+        margin-top: 8rem;
+    }
+</style>
+
 <head>
-    <link rel="stylesheet" href="{% static 'css/about.css'%}" />
 </head>
 <div class="about">
     <div class="about__photoWrap">
         <div class="about__photo">
-            <img class="about__img" src="{% static 'img/profile--big.jpg'%}" />
+            <div class="about__imgWrap">
+                <div class="about__img" />
+            </div>
         </div>
     </div>
+    <div>
+        <div class="wbIconButton">
+        </div>
 
-    <div class="wbIconButton">
-    </div>
-
-    <div class="wbIconButton">
+        <div class="wbIconButton">
+        </div>
     </div>
 </div>
 {% endblock %}

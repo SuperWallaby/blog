@@ -12,9 +12,11 @@
         {% for article in articles %}
         <div class="column articles__article">
             <div class="articles__up">
-                <h2 class="articles__title">{{article.title}}</h2>
-                <span class="articles__date">{{article.date}}</span>
-                <p class="articles__p">{{article.snippet}}</p>
+                <div class="articles__body">
+                    <h2 class="articles__title">{{article.title}}</h2>
+                    <span class="articles__date">{{article.date}}</span>
+                    <p class="articles__p">{{article.snippet}}</p>
+                </div>
                 <div class="articles__img" style="background-image: url('{{ article.thumb.url}}')"> </div>
             </div>
             <a href="{% url 'articles:detail' slug=article.slug %}">

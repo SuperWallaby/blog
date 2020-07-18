@@ -1,16 +1,16 @@
-@import "./system/system";
 @import url('https://www.fontify.me/wf/b4bf8aa85a7e35fd018945b766e8bc6d');
 
 body {
 	font-weight: 300;
 	line-height: 1.98rem;
 	color: #323240;
-	font-family: proxima-nova, "Proxima Nova", sans-serif;
+	font-family: "Proxima Nova";
 	background-color: var(--primary-color-pale);
 	flex: 1 1;
 	display: flex;
 	flex-direction: column;
 }
+
 
 html {
 	display: flex;
@@ -24,11 +24,14 @@ html {
 	h4,
 	h5,
 	h6 {
-		font-family: font93040;
-		line-height: unset;
-		font-weight: 900;
+		@extend %titleStyle;
 	}
 
+	h4,
+	h5,
+	h6 {
+		margin: 0;
+	}
 
 
 

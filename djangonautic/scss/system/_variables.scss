@@ -1,18 +1,33 @@
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url(/static/font/FontsFree-Net-Proxima-Nova-Soft-W03-Regular.ttf) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* main #6E0FF7; */
 /* #E4E1F6; */
 /* 1E225E */
 /* F2F1F4 */
 html {
     color: #1F1F1F;
+    --warn-color: #F2853C;
+    --warn-color-light: #FBDBC6;
     --primary-color: #6E0FF7;
     --primary-color-dark: #1E225E;
     --primary-color-pale: #E4E1F6;
     --primary-color-light: #BDA5FC;
     --grey-level2: #ACACAC;
     --grey-level1: #ACACAC;
-    --grey-level0: #FBFBFD;
+    --grey-level0: #F9F9FB;
 }
 
+
+%titleStyle {
+    line-height: unset;
+    font-weight: 900;
+}
 
 $br1: 0.8rem unquote("/") 0.7rem;
 $br2: 1rem unquote("/") 0.9rem;
