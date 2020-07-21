@@ -89,7 +89,7 @@ html .head__lang {
 }
 
 html .head__title {
-  margin-left: 8rem;
+  margin-left: 1.6rem;
 }
 
 html .head__title a {
@@ -115,14 +115,22 @@ html .head__profile {
 
 html .menu {
   color: var(--primary-color-light);
-  position: absolute;
-  top: 2.4rem;
-  left: 2.4rem;
   z-index: 20;
 }
 
 @media only screen and (max-width: 750px) and (min-width: 0px) {
   html .menu {
+    display: none;
+  }
+}
+
+html .menu--mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) and (min-width: 0px) {
+  html .menu--mobile {
+    display: block;
     position: fixed;
     z-index: 90;
     top: unset;
@@ -140,7 +148,7 @@ html .menu {
     -webkit-box-shadow: 0px 0px 1.6rem var(--primary-color-light), 0px 0px 0.4rem rgba(255, 255, 255, 0.9);
             box-shadow: 0px 0px 1.6rem var(--primary-color-light), 0px 0px 0.4rem rgba(255, 255, 255, 0.9);
   }
-  html .menu:hover {
+  html .menu--mobile:hover {
     background-color: white;
     color: var(--primary-color);
   }
@@ -169,8 +177,8 @@ html .menu {
 }
 
 .wbIconButton--large {
-  width: 4rem;
-  height: 4rem;
+  width: 3.4rem;
+  height: 3.4rem;
 }
 
 .wbIconButton--small {
@@ -181,6 +189,10 @@ html .menu {
 
 .wbIconButton--round {
   border-radius: 50%;
+}
+
+.wbIconButton--grey {
+  background-color: var(--grey-level0);
 }
 
 .wbIconButton--warn {
@@ -518,6 +530,43 @@ html.out body {
   color: var(--primary-color);
 }
 
+.wbSection {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+svg.wbIcon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.wbContainer {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  background-color: white;
+  border-radius: 2.2rem / 1.8rem;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.about {
+  text-align: center;
+}
+
+.about__links {
+  max-width: 200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .about__photoWrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -676,7 +725,6 @@ html.out body {
 
 .articleList {
   background-color: white;
-  padding-bottom: 1.6rem;
 }
 
 .articleList .pagination {
@@ -699,11 +747,25 @@ html.out body {
   margin-bottom: 8rem;
 }
 
-.comment__title {
+.article-detail span {
+  font-size: inherit !important;
+}
+
+.comment {
+  background-color: var(--grey-level0);
+  border-radius: 0.8rem / 0.7rem;
+  padding: 0.8rem;
+}
+
+.comment__date {
+  color: var(--grey-level1);
+}
+
+.commentForm__title {
   margin-bottom: 2rem;
 }
 
-.comment__submit {
+.commentForm__submit {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;

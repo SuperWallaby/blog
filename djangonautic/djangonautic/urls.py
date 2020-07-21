@@ -19,7 +19,7 @@ urlpatterns = [
     path('admin/', admin.site.urls)
 ]
 
-urlpatterns += i18n_patterns(path('', include('articles.urls')), prefix_default_language=False)
+# urlpatterns += i18n_patterns(path('', include('articles.urls')), prefix_default_language=False)
 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

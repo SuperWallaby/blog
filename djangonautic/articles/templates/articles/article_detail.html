@@ -32,12 +32,18 @@
     </a>
     {% endif %}
 
+    {% if comments %}
+    <h2>Comments ({{comments|length}})</h2>
     {% for com in comments %}
-    <h6>{{com.name}}</h6>
-    <p>{{com.body}}</p>
-    {% endfor %}
-
     <div class="comment">
+        <h5 class="comment__title">{{com.name}}</h5>
+        <h6 class="comment__date">{{com.date_comment}}</h6>
+        <p class="comment__body">{{com.body}}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="commentForm">
         {% if new_comment %}
         <div class="wbAlert" role="alert">
             <div class="wbAlert__icon">
@@ -56,11 +62,11 @@
                     {{ new_comment_date }}
                 </div>
                 {% else %}
-                <h2 class="comment__title primary-color">Leave a comment</h2>
+                <h2 class="commentForm__title primary-color">Leave a comment</h2>
                 <form method="post">
                     {% csrf_token %}
                     {{ comment_form | crispy }}
-                    <button class="comment__submit wbButton" type="submit">Submit</button>
+                    <button class="commentForm__submit wbButton" type="submit">Submit</button>
                 </form>
                 {% endif %}
             </div>

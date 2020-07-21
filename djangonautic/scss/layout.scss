@@ -66,12 +66,6 @@ code {
 	font-size: 0.8rem;
 }
 
-svg.wbIcon {
-	width: 1em;
-	height: 1em;
-	fill: currentColor;
-}
-
 h1,
 h2,
 h3 {
@@ -80,11 +74,15 @@ h3 {
 	margin: 0;
 }
 
-.wrap {
-	padding-top: space(6);
-	flex: 1 1;
-	background-color: white;
-	border-radius: $br3;
-	border-bottom-left-radius: 0px;
-	border-bottom-right-radius: 0px;
+
+h1 {
+	font-size: 2rem
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+h3 {
+	font-size: 1.2rem;
 }

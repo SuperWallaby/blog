@@ -23,5 +23,5 @@ msgid "Read More"
 msgstr "xx"
 
 #: .\templates\base_layout.html:30
-msgid "Super Wallaby Blog"
+msgid "Dev Tech ++"
 msgstr "az"

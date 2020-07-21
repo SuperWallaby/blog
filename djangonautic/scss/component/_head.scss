@@ -32,7 +32,7 @@ html .head {
 			text-decoration: none;
 		}
 
-		margin-left: 8rem;
+		margin-left: space(4);
 
 		@include response($tablet) {
 			margin-left: 0;
@@ -52,28 +52,34 @@ html .head {
 
 html .menu {
 	color: var(--primary-color-light);
-	position: absolute;
-	top: 2.4rem;
-	left: 2.4rem;
 	z-index: 20;
 
 	@include response($tablet) {
-		position: fixed;
-		z-index: 90;
-		top: unset;
-		left: unset;
-		right: space(4);
-		bottom: space(6);
-		display: flex;
-		justify-content: center;
+		display: none;
+	}
 
-		background-color: var(--primary-color);
-		color: white;
-		box-shadow: 0px 0px space(4) var(--primary-color-light), 0px 0px space(1) rgba(255, 255, 255, 0.9);
+	&--mobile {
+		display: none;
 
-		&:hover {
-			background-color: white;
-			color: var(--primary-color);
+		@include response($tablet) {
+			display: block;
+			position: fixed;
+			z-index: 90;
+			top: unset;
+			left: unset;
+			right: space(4);
+			bottom: space(6);
+			display: flex;
+			justify-content: center;
+
+			background-color: var(--primary-color);
+			color: white;
+			box-shadow: 0px 0px space(4) var(--primary-color-light), 0px 0px space(1) rgba(255, 255, 255, 0.9);
+
+			&:hover {
+				background-color: white;
+				color: var(--primary-color);
+			}
 		}
 	}
 }

@@ -7,9 +7,6 @@ from django.utils import translation
 from django.core.paginator import Paginator
 import datetime
 
-# def generate_stie_map:
-#     articles = Article.objects.all().order_by('date')
-#     articles.
 
 import re
 
@@ -90,6 +87,19 @@ def article_detail(request, slug):
     new_comment = None
     next_title = None
     prev_title = None
+
+    print(len(comments));
+
+
+    print()
+    print(is_ko(request))
+    print(is_ko(request))
+    print(is_ko(request))
+    print(is_ko(request))
+    print(is_ko(request))
+    print(is_ko(request))
+    if is_ko(request):
+        print("aaaaaaa")
 
     if article.nextNode:
         next_article = Article.objects.get(slug=article.nextNode)

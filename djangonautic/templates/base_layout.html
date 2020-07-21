@@ -6,8 +6,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{% static '/img/fav.ico' %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Wallaby</title>
+    <title>Dev ++</title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="{% static 'css/normalize.css'%}" />
@@ -19,18 +20,26 @@
 
 <body>
     <div>
-        <span onclick="toggleSideNav()" class="menu hover wbIconButton wbIconButton--large">
+
+        <span onclick="toggleSideNav()" class="menu--mobile hover wbIconButton wbIconButton--large">
             <svg xmlns="http://www.w3.org/2000/svg" class="wbIcon" viewBox="0 0 24 24">
                 <path
                     d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-4.5 14c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm4.5 0c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm4.5 0c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5z" />
             </svg>
         </span>
+
         <div class="content">
 
             <div class="head">
                 <div class="head__left">
+                    <span onclick="toggleSideNav()" class="menu hover wbIconButton wbIconButton--large">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="wbIcon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-4.5 14c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm4.5 0c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm4.5 0c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5z" />
+                        </svg>
+                    </span>
                     <h1 class="head__title">
-                        <a href="{% url 'articles:list' %}">{% trans "Super Wallaby Blog" %}</a>
+                        <a href="{% url 'articles:list' %}">{% trans "Dev Tech ++" %}</a>
                     </h1>
                 </div>
 
@@ -66,13 +75,14 @@
                             {% endfor %}
                         </select>
                     </form>
-                    <a href="/about">
+                    <a href="/about/">
                         <div class="head__profile wbIconButton wbIconButton">
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="wrap">
+
+            <div class="wbContainer">
                 {%block content%}
                 {% endblock %}
             </div>

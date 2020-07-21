@@ -23,5 +23,5 @@ msgid "Read More"
 msgstr "더 읽기"
 
 #: .\templates\base_layout.html:32
-msgid "Super Wallaby Blog"
+msgid "Dev Tech ++"
 msgstr "슈퍼 왈라비 블로그"

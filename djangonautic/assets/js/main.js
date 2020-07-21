@@ -26,7 +26,17 @@ function toggleSideNav() {
     else
         root.classList.add('out');
 
-    
+
+}
+
+function animation(id, sense) {
+    bodymovin.loadAnimation({
+        container: document.getElementById(id),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: "../img/" + sense + '.json'
+    })
 }
 
 function prevent(e) {

@@ -13,8 +13,8 @@
 
 
     &--large {
-        width: 4rem;
-        height: 4rem;
+        width: 3.4rem;
+        height: 3.4rem;
     }
 
     &--small {
@@ -27,6 +27,10 @@
         border-radius: 50%;
     }
 
+    &--grey {
+        background-color: var(--grey-level0);
+    }
+
     &--warn {
         background-color: var(--warn-color-light);
         color: var(--warn-color);
@@ -35,5 +39,6 @@
     &.hover:hover {
         cursor: pointer;
         color: var(--primary-color);
+
     }
 }

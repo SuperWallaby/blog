@@ -1,0 +1,10 @@
+.wbContainer {
+    flex: 1 1;
+    padding-top: space(6);
+    padding-bottom: space(6);
+
+    background-color: white;
+    border-radius: $br3;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}

@@ -8,9 +8,28 @@
     &__article {
         margin-bottom: space(20);
     }
+
+    span {
+        font-size: inherit !important;
+    }
 }
 
+
 .comment {
+    background-color: var(--grey-level0);
+    border-radius: $br1;
+    padding: space(2);
+
+    &__date {
+        color: var(--grey-level1);
+    }
+
+    &__title {}
+
+    &__body {}
+}
+
+.commentForm {
     &__title {
         margin-bottom: space(5);
     }
