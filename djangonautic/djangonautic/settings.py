@@ -60,7 +60,7 @@ ROOT_URLCONF = 'djangonautic.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates', 'front/build'],
+        'DIRS': [os.path.join('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,8 +132,7 @@ LANGUAGES = (
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets'), os.path.join(
-    BASE_DIR, 'front/build/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -142,3 +141,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 GRAPHENE = {
     'SCHEMA': 'articles.schema.schema'
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+ALLOWED_HOSTS=['*']
