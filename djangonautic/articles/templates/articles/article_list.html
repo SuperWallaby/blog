@@ -56,5 +56,21 @@
 
 
     </div>
+
+    {% for article in articles %}
+    <div>
+        <div>
+            <div>
+                <h2>{{article.title}}</h2>
+                <span>{{article.date}}</span>
+                <p>{{article.snippet}}</p>
+            </div>
+            <div style="background-image: url('{{ article.thumb.url}}')"> </div>
+        </div>
+        <a href="{% url 'articles:detail' slug=article.slug %}">
+
+        </a>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
